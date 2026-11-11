@@ -1,0 +1,115 @@
+Song numbers (use them to name lyric files, e.g. lyrics/10006.lrc)
+number | title | artist | category
+
+10001 | Kathang Isip | Ben&Ben | OPM
+10002 | Tadhana | Up Dharma Down | OPM
+10003 | Ikaw | Yeng Constantino | OPM
+10004 | Hawak Kamay | Yeng Constantino | OPM
+10005 | Pare Ko | Eraserheads | OPM
+10006 | Ang Huling El Bimbo | Eraserheads | OPM
+10007 | Torete | Moonstar88 | OPM
+10008 | Narda | Kamikazee | OPM
+10009 | Mundo | IV of Spades | OPM
+10010 | Buwan | Juan Karlos | OPM
+10011 | Ngayon at Kailanman | Basil Valdez | OPM
+10013 | Careless Whisper | George Michael | Love Songs
+10014 | Perfect | Ed Sheeran | Love Songs
+10015 | Endless Love | Diana Ross & Lionel Richie | Love Songs
+10016 | Truly Madly Deeply | Savage Garden | Love Songs
+10017 | I Don’t Want to Miss a Thing | Aerosmith | Love Songs
+10018 | Shape of You | Ed Sheeran | Pop
+10019 | Just the Way You Are | Bruno Mars | Pop
+10020 | Love Story | Taylor Swift | Pop
+10021 | Someone Like You | Adele | Pop
+10022 | Uptown Funk | Mark Ronson ft. Bruno Mars | Pop
+10023 | Dancing Queen | ABBA | Pop
+10024 | Bohemian Rhapsody | Queen | Rock
+10025 | Don’t Stop Believin’ | Journey | Rock
+10026 | Livin’ on a Prayer | Bon Jovi | Rock
+10027 | Zombie | The Cranberries | Rock
+10028 | Sweet Child o’ Mine | Guns N’ Roses | Rock
+10029 | Wonderwall | Oasis | Rock
+10030 | I Will Always Love You | Whitney Houston | Birit
+10032 | Hero | Mariah Carey | Birit
+10033 | All by Myself | Celine Dion | Birit
+10034 | I Have Nothing | Whitney Houston | Birit
+10035 | Sweet Caroline | Neil Diamond | Classics
+10036 | Take Me Home, Country Roads | John Denver | Classics
+10037 | My Way | Frank Sinatra | Classics
+10038 | Can’t Help Falling in Love | Elvis Presley | Classics
+10039 | Hotel California | Eagles | Classics
+10040 | Billie Jean | Michael Jackson | Classics
+10041 | Dynamite | BTS | K-Pop
+10042 | Gangnam Style | PSY | K-Pop
+10043 | How You Like That | BLACKPINK | K-Pop
+10044 | Super Shy | NewJeans | K-Pop
+10045 | Stayin’ Alive | Bee Gees | Disco & Reggae
+10046 | Don’t Worry, Be Happy | Bobby McFerrin | Disco & Reggae
+10047 | Three Little Birds | Bob Marley | Disco & Reggae
+10048 | Magasin | Eraserheads | OPM
+10049 | Alapaap | Eraserheads | OPM
+10050 | Ligaya | Eraserheads | OPM
+10051 | Overdrive | Eraserheads | OPM
+10052 | Huling Sandali | December Avenue | OPM
+10053 | Sa Ngalan ng Pag-ibig | December Avenue | OPM
+10054 | Kung ’Di Rin Lang Ikaw | December Avenue & Moira Dela Torre | OPM
+10055 | Ikaw at Ako | Moira Dela Torre & Jason Marvin | OPM
+10056 | Malaya | Moira Dela Torre | OPM
+10057 | Paubaya | Moira Dela Torre | OPM
+10058 | Titibo-tibo | Moira Dela Torre | OPM
+10059 | Tagpuan | Moira Dela Torre | OPM
+10060 | Pasilyo | SunKissed Lola | OPM
+10061 | Upuan | Gloc-9 ft. Jeazell Grutas | OPM
+10062 | Sirena | Gloc-9 ft. Ebe Dancel | OPM
+10063 | Gusto | Zack Tabudlo | OPM
+10064 | Binibini | Zack Tabudlo | OPM
+10065 | Give Me Your Forever | Zack Tabudlo | OPM
+10066 | Pano | Zack Tabudlo | OPM
+10067 | Palagi | TJ Monterde | OPM
+10068 | Marilag | Dionela | OPM
+10069 | Sining | Dionela ft. Jay R | OPM
+10070 | Oksihina | Dionela | OPM
+10071 | Mahika | Adie & Janine Berdin | OPM
+10072 | Dilaw | Maki | OPM
+10073 | Hari ng Sablay | Sugarfree | OPM
+10074 | Mariposa | Sugarfree | OPM
+10075 | Burnout | Sugarfree | OPM
+10076 | Prom | Sugarfree | OPM
+10077 | Migraine | Moonstar88 | OPM
+10078 | Stay | Cueshé | OPM
+10079 | Your Universe | Rico Blanco | OPM
+10080 | Yugto | Rico Blanco | OPM
+10081 | Balang Araw | I Belong to the Zoo | OPM
+10082 | Kilometro | Sarah Geronimo | OPM
+10083 | Tala | Sarah Geronimo | OPM
+10084 | Leaves | Ben&Ben | OPM
+10085 | Maybe the Night | Ben&Ben | OPM
+10086 | Sa Susunod na Habambuhay | Ben&Ben | OPM
+10087 | Araw-Araw | Ben&Ben | OPM
+10088 | Pagtingin | Ben&Ben | OPM
+10089 | Oo | Up Dharma Down | OPM
+10090 | Indak | Up Dharma Down | OPM
+10091 | Hey Barbara | IV of Spades | OPM
+10092 | Come Inside of My Heart | IV of Spades | OPM
+10093 | Ere | Juan Karlos | OPM
+10094 | Jopay | Mayonnaise | OPM
+10096 | Awit ng Kabataan | Rivermaya | OPM
+10097 | 214 | Rivermaya | OPM
+10098 | Harana | Parokya ni Edgar | OPM
+10099 | Buloy | Parokya ni Edgar | OPM
+10100 | Gitara | Parokya ni Edgar | OPM
+10101 | Halik | Kamikazee | OPM
+10102 | Pinoy Ako | Orange and Lemons | OPM
+10103 | Heaven Knows | Orange and Lemons | OPM
+10105 | Tatsulok | Bamboo | OPM
+10106 | Hallelujah | Bamboo | OPM
+10107 | Noypi | Bamboo | OPM
+10109 | Kung Wala Ka | Hale | OPM
+10110 | The Day You Said Goodnight | Hale | OPM
+10112 | Kahit Ayaw Mo Na | This Band | OPM
+10113 | Ikaw Lamang | Silent Sanctuary | OPM
+10114 | Anak | Freddie Aguilar | OPM Classics
+10115 | Handog | Florante | OPM Classics
+10116 | Kumusta Ka | Rey Valera | OPM Classics
+10117 | Maging Sino Ka Man | Rey Valera | OPM Classics
+10118 | Kung Kailangan Mo Ako | Rey Valera | OPM Classics

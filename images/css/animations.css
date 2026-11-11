@@ -1,0 +1,50 @@
+/* Animations: motion and polish. Remove the <link> to this file to turn them all off. */
+
+/* ---- Keyframes ---- */
+@keyframes fadeUp   {from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes slideIn  {from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes shimmer  {to{background-position:200% center}}
+@keyframes glow     {0%,100%{filter:drop-shadow(0 0 6px color-mix(in srgb,var(--pink) 25%,transparent))}50%{filter:drop-shadow(0 0 18px color-mix(in srgb,var(--pink) 65%,transparent))}}
+@keyframes floatUp  {0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.5}100%{transform:translateY(-115vh) rotate(40deg);opacity:0}}
+@keyframes bgmove   {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes pop      {from{opacity:0;transform:scale(.85) translateY(8px)}to{opacity:1;transform:none}}
+@keyframes tvOn     {0%{transform:scale(1,.01);filter:brightness(4)}55%{transform:scale(1,1.03);filter:brightness(1.6)}100%{transform:none;filter:none}}
+@keyframes eq       {0%,100%{height:20%}50%{height:100%}}
+@keyframes scoreIn  {from{transform:scale(.5);opacity:0}to{transform:none;opacity:1}}
+@keyframes burst    {to{transform:translate(var(--dx),var(--dy)) rotate(360deg);opacity:0}}
+@keyframes bob      {50%{transform:translateY(-8px) scale(1.05)}}
+
+/* ---- Page ---- */
+header,.wrap{position:relative;z-index:1}
+h1{background:linear-gradient(90deg,var(--ink),var(--pink),var(--cyan),var(--pink),var(--ink));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite,glow 3s ease-in-out infinite}
+h1 span{color:transparent}
+.panel{animation:fadeUp .5s ease both}
+
+/* ---- Buttons and chips ---- */
+.btn,.chip{transition:transform .15s,box-shadow .2s,filter .2s,background .2s}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 4px 14px color-mix(in srgb,var(--pink) 35%,transparent)}
+.chip:hover{transform:translateY(-1px)}
+.btn:active,.chip:active{transform:scale(.95)}
+
+/* ---- Song book and queue ---- */
+.song{animation:fadeUp .4s ease both;animation-delay:calc(var(--i,0)*30ms);transition:transform .2s,box-shadow .2s,border-color .2s}
+.song:hover{transform:translateY(-3px);border-color:var(--pink);box-shadow:0 6px 18px color-mix(in srgb,var(--pink) 20%,transparent)}
+.q li{animation:slideIn .25s ease both}
+
+/* ---- Stage ---- */
+#vw{background:linear-gradient(120deg,color-mix(in srgb,var(--pink) 35%,#000),#05020a,color-mix(in srgb,var(--cyan) 30%,#000),#05020a);background-size:300% 300%;animation:bgmove 10s ease infinite}
+#stage.on{animation:tvOn .55s ease-out}
+#lyr .lyr-in{animation:pop .35s ease-out}
+#toast.show{animation:scoreIn .5s cubic-bezier(.2,1.6,.4,1)}
+.cf{position:absolute;left:50%;top:50%;font-size:5cqw;pointer-events:none;animation:burst 1.4s ease-out forwards}
+
+/* ---- Now-singing equalizer ---- */
+.nowrow{display:flex;gap:10px;align-items:center;margin-top:8px}
+.eq{display:flex;gap:3px;align-items:flex-end;height:18px}
+.eq[hidden]{display:none}
+.eq i{width:4px;height:60%;border-radius:2px;background:var(--pink);animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.2s}.eq i:nth-child(3){animation-delay:.45s}.eq i:nth-child(4){animation-delay:.1s}
+
+/* ---- Respect people who prefer less motion ---- */
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+

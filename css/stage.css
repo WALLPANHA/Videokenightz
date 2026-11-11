@@ -1,0 +1,33 @@
+/* Stage: the TV / full screen / split screen, video and lyrics overlay */
+#tv{display:grid;place-items:center}
+#tv.tv{padding:16px 16px 30px;background:linear-gradient(145deg,var(--tvc),color-mix(in srgb,var(--tvc) 35%,#000));border-radius:28px;box-shadow:0 10px 30px #0006,inset 0 2px 0 #fff3;position:relative}
+#tv.tv::after{content:"";position:absolute;bottom:9px;left:50%;width:56px;height:6px;margin-left:-28px;border-radius:4px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+#tv:fullscreen{padding:0;border-radius:0;background:#000}#tv:fullscreen::after{display:none}#tv:fullscreen #stage{width:min(100vw,177.78vh);border-radius:0}
+#stage{width:100%;position:relative;aspect-ratio:16/9;background:#000;container-type:inline-size;overflow:hidden;border-radius:14px;color:#fff}
+.tv #stage{border-radius:20px;box-shadow:inset 0 0 30px #000}
+#vw{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px;font-size:clamp(13px,2.2cqw,20px);background:radial-gradient(circle at 50% 30%,#5a2080,#06020a)}
+#vw iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+#lyr{position:absolute;left:0;right:0;padding:1.2cqw 3cqw;text-align:center;background:rgba(0,0,0,var(--bar));font-size:calc(var(--fs)*.1cqw);font-family:var(--ff);line-height:1.25;cursor:pointer;z-index:2}
+.pos-bottom #lyr{bottom:0}.pos-top #lyr{top:0}.pos-middle #lyr{top:50%;transform:translateY(-50%)}
+#lyr .c{position:relative;display:block;color:var(--tx);font-weight:800}
+#lyr .c .w{position:relative;display:inline-block}
+#lyr .c .w .f{position:absolute;left:0;top:0;width:100%;white-space:nowrap;color:var(--hi);clip-path:inset(0 calc(100% - var(--wp,0%)) 0 0);transition:clip-path .25s linear}
+#lyr .c.ch .w .f{color:var(--ch)}
+.nofill #lyr .c{color:var(--hi)}.nofill #lyr .c.ch{color:var(--ch)}.nofill #lyr .c .f{display:none}#lyr .n{color:var(--tx);opacity:.85;font-size:.68em;margin-top:.2em}
+.nolyr #lyr{display:none}
+/* Split layout: video on the left (kept 16:9), lyrics panel on the right */
+.split{display:grid;grid-template-columns:46% 1fr;grid-template-rows:minmax(0,1fr)}
+.split #vw{position:relative;inset:auto;align-self:center;aspect-ratio:16/9;min-width:0}
+.split #lyr{position:static;transform:none!important;display:flex;flex-direction:column;justify-content:center;min-width:0;min-height:0;overflow:hidden;overflow-wrap:break-word;
+  font-size:calc(var(--fs)*.075cqw);padding:3cqw 3.5cqw;gap:.4em;background:linear-gradient(160deg,color-mix(in srgb,var(--pink) 16%,#12081c),#0a0612)}
+.split.is-chorus #lyr{background:linear-gradient(160deg,color-mix(in srgb,var(--ch) 30%,#12081c),#0a0612)}
+#toast{position:absolute;inset:0;display:none;place-items:center;z-index:5;background:#000a;font-size:6cqw;font-weight:600;letter-spacing:.06em;color:var(--hi);text-align:center;padding:10px}#toast.show{display:grid}
+
+/* Chorus: the lyrics bar glows with the chorus color */
+#lyr{transition:background .4s}
+.is-chorus #lyr{background:linear-gradient(90deg,rgba(0,0,0,var(--bar)),color-mix(in srgb,var(--ch) 40%,transparent),rgba(0,0,0,var(--bar)))}
+
+/* Animated background canvas sits behind the video/audio panel */
+#bgfx{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+#stage #vw{background:none;animation:none;place-items:center}
+#bgvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;background:#000}

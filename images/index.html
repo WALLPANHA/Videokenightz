@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#121a26">
+<title>Videoke Nights</title>
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon-64.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/stage.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/machine.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header class="head">
+  <img class="logo-img" src="images/logo-256.png" alt="Videoke Nights logo" width="64" height="64">
+  <div><h1>Videoke Nights</h1><p>Your songs, your stage, your night.</p></div>
+</header>
+
+<main class="rig">
+  <!-- LEFT: the song book -->
+  <aside class="book" aria-label="Song book">
+    <div class="book-top"><h2>Song Book</h2><span class="count" id="count"></span></div>
+    <button class="find" id="opensearch" type="button">Search songs, artists or numbers…</button>
+    <div class="tabs" id="chips" role="tablist" aria-label="Song categories"></div>
+    <div class="page" id="grid"></div>
+    <div class="pager"><button class="btn alt" id="pgprev" aria-label="Previous page">◀</button><span id="pgno"></span><button class="btn alt" id="pgnext" aria-label="Next page">▶</button></div>
+    <details class="addsong"><summary>＋ Add a song to the book</summary>
+      <div class="form"><div class="form2"><input type="text" id="at" placeholder="Title"><input type="text" id="aa" placeholder="Artist"></div>
+        <input type="text" id="ac" list="cats" placeholder="Category (e.g. Rock, Hip-Hop)"><datalist id="cats"></datalist>
+        <button class="btn" id="add">Add to song book</button></div>
+    </details>
+  </aside>
+
+  <!-- CENTER: the videoke machine -->
+  <section class="machine">
+    <div class="m-top"><span class="led"></span><span class="plate">Videoke Nights</span><span class="lcd" id="lcd" title="Current song number">-----</span></div>
+    <div class="m-body">
+      <div class="spk" aria-hidden="true"></div>
+      <div class="m-screen"><div id="tv"><div id="stage"><div id="vw"></div><div id="lyr"></div><div id="toast"></div></div></div></div>
+      <div class="spk" aria-hidden="true"></div>
+    </div>
+    <div class="deck">
+      <div class="keys">
+        <button class="btn alt" id="rs">⏮ Restart</button><button class="btn alt" id="pp">⏯ Play / Pause</button>
+        <button class="btn alt" id="pv">◀ Line</button><button class="btn alt" id="nx">Line ▶</button>
+        <button class="btn" id="skip">Next song ⏭</button><button class="btn alt" id="fs">⛶ Full screen</button>
+      </div>
+      <div class="keypad"><label for="code">Song no.</label><input type="text" id="code" inputmode="numeric" maxlength="5" placeholder="10001" aria-label="Song number"><button class="btn" id="rsv">Reserve</button></div>
+    </div>
+    <div class="nowrow"><div class="eq" id="eq" hidden><i></i><i></i><i></i><i></i></div><div id="info" class="empty"></div></div>
+    <div class="under">
+      <section class="panel"><h2>Up next</h2><ul class="q" id="queue"></ul></section>
+      <section class="panel"><h2>Lyrics &amp; audio for this song</h2>
+        <div class="form">
+          <button class="btn alt" id="fl">Fetch lyrics automatically</button>
+          <span class="empty" id="lver">Lyrics version: none loaded</span>
+          <div class="row"><button class="btn alt sm" id="lvp" type="button" disabled>◀ Previous version</button><button class="btn alt sm" id="lvn" type="button" disabled>Next version ▶</button></div>
+          <span class="empty" id="soff">Timing for this song: 0.0 s</span>
+          <div class="row"><button class="btn alt sm" data-nudge="-1" type="button">Later 1s</button><button class="btn alt sm" data-nudge="-0.5" type="button">Later 0.5s</button><button class="btn alt sm" data-nudge="0.5" type="button">Earlier 0.5s</button><button class="btn alt sm" data-nudge="1" type="button">Earlier 1s</button><button class="btn alt sm" data-nudge="0" type="button">Reset</button></div>
+          <button class="btn alt" id="tapb" type="button">Re-time lyrics by tapping</button>
+          <div id="tapbox" hidden><p id="tapline" class="empty"></p><div class="row"><button class="btn" id="tapnow" type="button">TAP: this line starts now</button><button class="btn alt sm" id="tapx" type="button">Cancel</button></div></div>
+          <textarea id="lt" placeholder="Paste your own lyrics, one line per row. Optional timing: [00:12.5] line"></textarea>
+          <button class="btn alt" id="addaudio">Add audio file</button><input type="file" id="af2" accept="audio/*" hidden>
+          <span class="empty" id="astat"></span>
+          <button class="btn alt" id="fcheck" type="button">Check this song's folder</button>
+          <pre id="frep" class="srep" hidden></pre>
+          <label>Import song folders: choose your <b>songs</b> folder<input type="file" id="impf" webkitdirectory multiple></label>
+          <span class="empty" id="impstat"></span>
+          <label>Or choose an audio file<input type="file" id="af" accept="audio/*"></label>
+          <button class="btn alt" id="afx">Remove the audio file for this song</button>
+          <div class="links" id="srcs" style="display:none"><span class="empty">Where to get this song's audio (legal sources):</span>
+            <a class="link" id="lnkA" target="_blank" rel="noopener">Apple Music ↗</a><a class="link" id="lnkZ" target="_blank" rel="noopener">Amazon ↗</a><a class="link" id="lnkK" target="_blank" rel="noopener">Backing track ↗</a>
+            <a class="link" id="ytm" target="_blank" rel="noopener">Minus-one (YouTube) ↗</a></div>
+          <span class="empty">Audio files stay on this device. Only use files you have the right to use.</span>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- RIGHT: settings -->
+  <aside class="side" aria-label="Settings">
+    <h2>Settings</h2>
+    <details open><summary>Screen &amp; theme</summary>
+      <div class="seg" id="seg" role="group" aria-label="Screen layout"></div>
+      <div class="swatches" id="swatches" role="group" aria-label="Color themes"></div>
+    </details>
+    <details><summary>Lyrics style</summary>
+      <div class="row" style="margin-bottom:10px"><button class="btn alt" data-p="classic">Classic</button><button class="btn alt" data-p="cinema">Cinema</button><button class="btn alt" data-p="focus">Lyrics focus</button></div>
+      <div class="form" id="lctrl"></div>
+    </details>
+    <details><summary>Colors</summary><div class="form" id="wctrl"></div></details>
+    <details><summary>Playback &amp; sound</summary>
+      <div class="form" id="pctrl"></div>
+      <button class="btn alt" id="stest" type="button" style="margin-top:12px">Sound check (plays a test beep)</button>
+      <pre id="srep" class="srep" hidden></pre>
+      <label style="margin-top:12px">Your own background video (MP4 or WebM, loops, stays on this device)<input type="file" id="bf" accept="video/*"></label>
+      <button class="btn alt" id="bfx" style="margin-top:8px">Remove my background video</button>
+      <p class="hint">If lyrics run early or late, nudge the timing offset.</p>
+    </details>
+  </aside>
+</main>
+
+<!-- Song search dialog -->
+<dialog id="sdlg" aria-labelledby="sdt">
+  <form method="dialog" class="sd-head"><h2 id="sdt">Search songs</h2><button class="x" aria-label="Close search">✕</button></form>
+  <div class="sd-body">
+    <input type="search" id="q" placeholder="Title, artist or song number…" aria-label="Search" autocomplete="off">
+    <div class="list" id="sres"></div>
+    <h3>More songs online</h3>
+    <div class="chips" id="browse" aria-label="Browse online"></div>
+    <div class="row"><button class="btn alt" id="onl">Search the online catalog</button></div>
+    <div class="list" id="olist" hidden></div>
+  </div>
+</dialog>
+
+<footer>Songs you add and your settings stay on this device. Lyrics are looked up from a third-party lyrics service and may not match every song. Please use audio and video you have the right to use.</footer>
+<!-- Scripts load in this order; each file builds on the one before it. -->
+<script src="js/songs.js"></script>
+<script src="js/state.js"></script>
+<script src="js/songfiles.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/lyrics.js"></script>
+<script src="js/lyricsapi.js"></script>
+<script src="js/player.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/songsearch.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/folders.js"></script>
+<script src="js/visuals.js"></script>
+<script src="js/tapsync.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/interact.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

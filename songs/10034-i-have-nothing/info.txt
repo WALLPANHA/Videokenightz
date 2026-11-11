@@ -1,0 +1,15 @@
+Song number: 10034
+Title: I Have Nothing
+Artist: Whitney Houston
+Category: Birit
+
+Drop files for this song in this folder. Use one of these names:
+  audio.mp3  (or 10034.mp3, or i-have-nothing.mp3)   the song's audio
+      other formats: .m4a .wav .ogg .aac .flac .opus
+  video.mp4  (or video.webm)                        a video for the screen
+      with an audio file -> the video plays silently on the screen
+      without one        -> the video's own sound plays and the lyrics follow it
+  lyrics.lrc                                        timed lyrics, lines like  [00:12.50] text of the line
+Nothing else to do: reserve the song and it is picked up. The site shows under the screen whether it found the audio.
+(lyrics.lrc is read when the site is hosted online; if you open index.html straight from the folder, use the lyrics box instead.)
+Only use audio, video and lyrics you have the right to use.
